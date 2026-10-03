@@ -1,0 +1,46 @@
+# Core deep learning
+torch>=2.2
+torchvision>=0.17
+timm>=0.9.16
+
+# Synthetic-content branch (frozen CLIP encoder) -- pick one backend
+open_clip_torch>=2.24
+# transformers>=4.38          # alternative CLIP backend, uncomment if preferred
+
+# Classical forensics
+opencv-python>=4.9
+scikit-image>=0.22
+scipy>=1.12
+Pillow>=10.2
+jpegio>=0.2.4                 # direct JPEG DCT coefficient access (dct.py)
+ImageHash>=4.3                # perceptual hashing (utils/hashing.py)
+
+# Fusion / calibration / metrics
+scikit-learn>=1.4
+lightgbm>=4.3
+joblib>=1.3
+
+# Data generation
+pycocotools>=2.0.7
+
+# Service
+fastapi>=0.110
+uvicorn[standard]>=0.27
+python-multipart>=0.0.9
+pydantic>=2.6
+reportlab>=4.1                # signed PDF export
+
+# Retrieval / provenance (optional, wire in when scaling Branch D)
+faiss-cpu>=1.8.0
+# c2pa-python>=0.5             # C2PA manifest verification, install once available for your platform
+
+# Experiment tracking (optional)
+# wandb>=0.16
+# mlflow>=2.11
+
+# Export / deployment (optional)
+# onnx>=1.15
+# onnxruntime-gpu>=1.17
+
+# Dev / test
+pytest>=8.0

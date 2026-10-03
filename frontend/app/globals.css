@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+
+  --background: #faf9f6;
+  --surface: #ffffff;
+  --surface-muted: #f3f2ee;
+  --foreground: #14151a;
+  --foreground-muted: #6b6d76;
+  --border: #e7e5df;
+  --border-strong: #d7d4cb;
+
+  /* ForgeLens brand: deep violet-indigo (trust / authority) */
+  --primary: #4a3aff;
+  --primary-ink: #201a66;
+  --primary-soft: #eeecff;
+
+  /* Verified / authentic */
+  --verified: #0ea968;
+  --verified-soft: #e5f8ee;
+
+  /* Manipulated / alert */
+  --alert: #e8483b;
+  --alert-soft: #fdece9;
+
+  /* Inconclusive / abstain */
+  --caution: #c9860b;
+  --caution-soft: #fbf1de;
+
+  --radius-lg: 1.5rem;
+  --radius-md: 1rem;
+  --radius-sm: 0.625rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  --color-primary: var(--primary);
+  --color-primary-ink: var(--primary-ink);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-verified: var(--verified);
+  --color-verified-soft: var(--verified-soft);
+  --color-alert: var(--alert);
+  --color-alert-soft: var(--alert-soft);
+  --color-caution: var(--caution);
+  --color-caution-soft: var(--caution-soft);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --radius-lg: var(--radius-lg);
+  --radius-md: var(--radius-md);
+  --radius-sm: var(--radius-sm);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Fine dot-grid backdrop used behind hero / section breaks */
+.bg-grid {
+  background-image: radial-gradient(circle, var(--border-strong) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Soft radial glow accent */
+.bg-glow {
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 20%),
+    color-mix(in srgb, var(--primary) 14%, transparent),
+    transparent 70%
+  );
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.mono-tag {
+  font-family: var(--font-geist-mono);
+  letter-spacing: 0.02em;
+}
+
+/* Custom scrollbar, kept subtle and on-theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}

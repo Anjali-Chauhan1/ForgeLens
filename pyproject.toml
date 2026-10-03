@@ -1,0 +1,9 @@
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[project]
+name = "forgelens"
+version = "0.1.0"
+description = "Multi-branch digital image forgery detection and localization system"
+requires-python = ">=3.10"
